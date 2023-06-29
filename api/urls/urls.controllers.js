@@ -1,6 +1,6 @@
-const Url = require("../../models/Url");
+const Url = require("../../db/models/Url");
 const shortid = require("shortid");
-const User = require("../../models/User");
+const User = require("../../db/models/User");
 
 const baseUrl = "http:localhost:8000/urls";
 

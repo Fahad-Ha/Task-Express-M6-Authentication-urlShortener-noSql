@@ -1,7 +1,7 @@
 const connectDb = require("./database");
 const express = require("express");
 const passport = require("passport");
-const { localStrategy, jwtStrategy } = require("./db/middlewares/passport");
+const { localStrategy, jwtStrategy } = require("./middlewares/passport");
 const app = express();
 const urlRoutes = require("./api/urls/urls.routes");
 const userRoutes = require("./api/users/users.routes");
