@@ -37,6 +37,11 @@ exports.redirect = async (req, res) => {
 exports.deleteUrl = async (req, res) => {
   try {
     const url = await Url.findOne({ urlCode: req.params.code });
+    // Check if the authenticated user is the same as the user who created the URL
+    if (url.userId.toString() !== req.user._id.toString()) {
+      return res.status(401).json("Unauthorized to delete this URL");
+    }
+
     if (url) {
       await Url.findByIdAndDelete(url._id);
       return res.status(201).json("Deleted");

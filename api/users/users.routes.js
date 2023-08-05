@@ -7,7 +7,7 @@ const passport = require("passport");
 router.post("/signup", signup);
 router.post(
   "/signin",
-  passport.authenticate("local", { session: false }),
+  passport.authenticate("jwt", { session: false }),
   signin
 );
 router.get("/users", getUsers);
